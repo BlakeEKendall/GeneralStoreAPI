@@ -217,9 +217,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202004232203456_initCreate.cs" />
-    <Compile Include="Migrations\202004232203456_initCreate.Designer.cs">
-      <DependentUpon>202004232203456_initCreate.cs</DependentUpon>
+    <Compile Include="Migrations\202004240108487_initCreate.cs" />
+    <Compile Include="Migrations\202004240108487_initCreate.Designer.cs">
+      <DependentUpon>202004240108487_initCreate.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountBindingModels.cs" />
@@ -320,8 +320,8 @@
     <Content Include="Scripts\jquery-3.4.1.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202004232203456_initCreate.resx">
-      <DependentUpon>202004232203456_initCreate.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202004240108487_initCreate.resx">
+      <DependentUpon>202004240108487_initCreate.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

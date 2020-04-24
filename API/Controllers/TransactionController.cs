@@ -12,6 +12,7 @@ namespace API.Controllers
     public class TransactionController : ApiController
     {
         private ApplicationDbContext _ctx = new ApplicationDbContext();
+
         [HttpPost]
         public IHttpActionResult CreateTransaction([FromBody] Transaction transactionToCreate)
         {
@@ -68,7 +69,7 @@ namespace API.Controllers
                 return BadRequest("The transaction you are looking for does not exist. Please use a valid transaction ID.");
             }
             _ctx.Transactions.Remove(transactionToDelete);
-            return Ok();    
+            return Ok();  
         }
 
     }
