@@ -45,5 +45,31 @@ namespace API.Controllers
             return Ok(transactionsToReturn);
         }
 
+        [HttpPut]
+        public IHttpActionResult UpdateIndividualTransaction([FromUri]int transactionToUpdateId, [FromBody] Transaction updatedTransaction)
+        {
+            var currentTransaction = _ctx.Transactions.Find(transactionToUpdateId);
+            if (currentTransaction == null)
+            {
+                return BadRequest("The transaction you are looking for does not exist. Please use a valid transaction ID.");
+            }
+            currentTransaction.ProductId = updatedTransaction.ProductId;
+            currentTransaction.CustomerId = updatedTransaction.CustomerId;
+            _ctx.SaveChanges();
+            return Ok();
+        }
+
+        [HttpDelete]
+        public IHttpActionResult DeleteIndividualTransaction([FromUri] int transactionToDeleteId)
+        {
+            var transactionToDelete = _ctx.Transactions.Find(transactionToDeleteId);
+            if (transactionToDelete == null)
+            {
+                return BadRequest("The transaction you are looking for does not exist. Please use a valid transaction ID.");
+            }
+            _ctx.Transactions.Remove(transactionToDelete);
+            return Ok();    
+        }
+
     }
 }

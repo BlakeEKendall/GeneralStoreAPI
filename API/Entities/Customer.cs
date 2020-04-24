@@ -11,7 +11,7 @@ namespace API.Entities
         [Key]
         public int CustomerId { get; set; }
         public string Name { get; set; }
-        public int TimeOrdered { get; set; }
-        public DateTime DateCreated { get; set; }
+        public int TimesOrdered { get; set; } = 0;
+        public DateTime DateCreated { get; set; } = DateTime.Now;
     }
 }

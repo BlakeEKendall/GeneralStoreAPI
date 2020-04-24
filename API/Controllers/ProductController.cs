@@ -9,13 +9,13 @@ using System.Web.Http;
 
 namespace API.Controllers
 {
-    [Route("api/[controller]")]
+    
     public class ProductController : ApiController
     {
         private ApplicationDbContext _ctx = new ApplicationDbContext();
-        // POST api/products/create
+
+        // POST api/products
         [HttpPost]
-        //[Route("create")]
         public IHttpActionResult CreateProduct(Product productToCreate)
         {
             if(ModelState.IsValid)
